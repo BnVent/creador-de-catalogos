@@ -11,14 +11,15 @@ body {
   display: block;
   margin: auto;
   height: 100vh;
-  padding: 1rem 1.5rem 4rem 1.5rem;
+  padding: 1rem 1.5rem;
+  padding-bottom: 3rem;
   max-width: 500px;
 }
 
 header {
   display: block;
   padding: 0.25rem 0.25rem;
-  color: #FFF;
+  color: #fff;
   background-color: rgb(69, 137, 255);
   margin: -1.5rem -1.5rem 1.5rem -1.5rem;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
@@ -32,44 +33,13 @@ header img {
   height: auto;
 }
 
-#add-items-button,
-#download-catalog-button {
-  border-radius: 32px;
-  background-color: #fff;
-  font-weight: bold;
-  width: 50%;
-}
-
-#add-items-button:active,
-#download-catalog-button:active {
-  box-shadow: none;
-}
-
-#add-items-button {
-  color: #fff;
-  background-color: rgb(255, 0, 166);
-  box-shadow: 0 3px 12px rgba(143, 3, 94, 0.673);
-}
-
-#download-catalog-button {
-  color: rgba(0, 0, 0, 0.75);
-  background-color: rgb(128, 255, 0);
-  box-shadow: 0 3px 12px rgb(94, 186, 2);
-}
-#download-catalog-button img {
-  opacity: 0.75;
-}
-
 #catalog-container {
   position: relative;
-  border: 2px solid darkgray;
-  border-radius: 10px 10px 0 0;
+  border: 3px solid darkgray;
+  border-radius: 10px;
   max-height: 55vh;
-  margin: auto;
   box-sizing: border-box;
   overflow-y: scroll;
-  background-color: darkgray;
-  padding: 1rem;
 }
 #catalog-container #catalog {
   min-height: 100vh;
@@ -91,8 +61,21 @@ header img {
   border-radius: 0 0 8px 8px;
   border: 2px solid #dbdbdb;
 }
+#catalog-container #add-item-card {
+  border: 2px dashed #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 3px #dbdbdb;
+}
+#catalog-container #add-item-card img {
+  width: 4rem;
+  height: auto;
+  filter: invert(100%);
+  opacity: 0.15;
+}
 
-#pages-indicator-container {
+/* #pages-indicator-container {
   width: 100%;
   text-align: center;
   padding: 0.5rem 0;
@@ -101,7 +84,7 @@ header img {
   border-radius: 0 0 10px 10px;
   font-size: 0.9rem;
 }
-
+ */
 .icon-flex-container {
   display: flex;
   align-items: center;
@@ -111,7 +94,6 @@ header img {
 #add-banner-accordion {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 0;
   font-weight: bold;
   background-color: #fff;
 }
@@ -163,28 +145,14 @@ header img {
   transition: transform 0.25s;
 }
 
-.buttons-container {
+#buttons-container {
   display: flex;
-  max-width: 32rem;
-  margin: 1rem 0;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  margin: 1rem 0;
 }
-.buttons-container button {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 2px solid gray;
-}
-
-#fullscreen-button-container {
-  position: relative;
-}
-
-#fullscreen-button {
-  position: absolute;
-  top: -2.5rem;
-  right: 0.25rem;
+#buttons-container img {
   width: 1.5rem;
   height: auto;
   border-radius: 50%;

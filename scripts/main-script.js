@@ -9,8 +9,18 @@ if ("serviceWorker" in navigator) {
 
 const openFiles = document.getElementById("open-files");
 const productsGrid = document.getElementById("products-grid");
+const addItemsCard = document.getElementById("add-item-card");
+const addItemsButton = document.getElementById("add-item-button");
 
-document.getElementById("add-items-button").onclick = () => {
+/* document.getElementById("add-items-button").onclick = () => {
+  openFiles.click();
+}; */
+
+addItemsButton.onclick = () => {
+  openFiles.click();
+};
+
+addItemsCard.onclick = () => {
   openFiles.click();
 };
 
@@ -33,15 +43,15 @@ const addPriceFeatureToImage = (image) => {
   };
 };
 
-// NOTA: CAMBIAR TAMAÑO DE CANVAS A LA HORA DE GUARDARLO, PARA MAYOR RESOLUCIÓN (COMO CUANDO SE GUARDA EN PC).
-
 function addImageToGrid(imageURL) {
   let image = document.createElement("div");
   image.style.background = `url(${imageURL})`;
   image.style.backgroundSize = "cover";
   image.style.backgroundPosition = "center";
   addPriceFeatureToImage(image);
+  productsGrid.removeChild(addItemsCard);
   productsGrid.appendChild(image);
+  productsGrid.appendChild(addItemsCard);
 }
 
 openFiles.onchange = (event) => {
@@ -52,7 +62,7 @@ openFiles.onchange = (event) => {
   }
 };
 
-document.getElementById("download-catalog-button").onclick = () => {
+document.getElementById("download-button").onclick = () => {
   const catalog = document.getElementById("catalog");
 
   /* catalog.style.width = window.innerWidth * 1.5 + "px" */

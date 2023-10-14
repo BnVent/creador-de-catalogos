@@ -15,20 +15,21 @@
         <h1>Creador de catálogos Web</h1>
       </header>
       <div id="catalog-container">
+        <input type="file" name="" id="open-files" multiple accept="image/*" />
         <div id="catalog">
-          <div id="products-grid"></div>
+          <div id="products-grid">
+            <div id="add-item-card"><img src="./icons/add-circle-icon.svg" alt="" /></div>
+          </div>
         </div>
       </div>
-      <div id="fullscreen-button-container">
-        <img
-          id="fullscreen-button"
-          src="icons/enter-fullscreen-icon.svg"
-          alt=""
-        />
+      <div id="buttons-container">
+        <img id="download-button" src="icons/download-icon.svg" alt="" />
+        <img id="fullscreen-button" src="icons/enter-fullscreen-icon.svg" alt="" />
+        <img id="add-item-button" src="icons/add-image-icon.svg" alt="" />
       </div>
-      <div id="pages-indicator-container">Página 1 de 1</div>
+      <!-- <div id="pages-indicator-container">Página 1 de 1</div> -->
 
-      <div class="buttons-container">
+      <!-- <div class="buttons-container">
         <div class="main-button" id="add-items-button">
           <img class="button-icon" src="icons/add-image-icon.svg" alt="" />
           <span>Agregar imágenes</span>
@@ -37,7 +38,7 @@
           <img class="button-icon" src="icons/download-icon.svg" alt="" />
           <span>Descargar catálogo</span>
         </div>
-      </div>
+      </div> -->
 
       <div id="add-banner-accordion">
         <div class="header">
@@ -53,7 +54,7 @@
 
           <label for="">
             <span>Usar imagen</span>
-            <input id="select-banner" type="file" src="" alt="" />
+            <input id="select-banner" type="file" src="" accept="image/*" />
           </label>
 
           <!-- <label for="">
@@ -94,7 +95,6 @@
         </div>
       </div> -->
     </div>
-    <input type="file" name="" id="open-files" multiple />
     <script src="scripts/main-script.js" type="module"></script>
     <script src="scripts/full-screen.js"></script>
     <script src="scripts/banner-options.js"></script>
