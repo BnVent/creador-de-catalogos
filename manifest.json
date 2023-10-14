@@ -5,8 +5,8 @@
     "theme_color" : "#f69435",
     "background_color" : "#ffffff",
     "display" : "standalone",
-    "scope" : "./",
-    "start_url" : "./",
+    "scope" : "./creador-de-catalogos/",
+    "start_url" : "./creador-de-catalogos/",
     "icons": [
         {
           "src": "icon.png",
