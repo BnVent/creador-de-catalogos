@@ -1,18 +1,36 @@
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
       .register("/creador-de-catalogos/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err))
-  })
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
 }
-
 
 const openFiles = document.getElementById("open-files");
 const productsGrid = document.getElementById("products-grid");
 
 document.getElementById("add-items-button").onclick = () => {
   openFiles.click();
+};
+
+const addPriceFeatureToImage = (image) => {
+  const priceElement = document.createElement("input");
+
+  image.onclick = () => {
+    if (image.children.length === 0) {
+      priceElement.setAttribute("type", "text");
+      priceElement.className = "price-element";
+      image.appendChild(priceElement);
+      priceElement.focus();
+    }
+  };
+
+  priceElement.onblur = () => {
+    if (priceElement.value == "") {
+      image.removeChild(priceElement);
+    }
+  };
 };
 
 // NOTA: CAMBIAR TAMAÑO DE CANVAS A LA HORA DE GUARDARLO, PARA MAYOR RESOLUCIÓN (COMO CUANDO SE GUARDA EN PC).
@@ -22,6 +40,7 @@ function addImageToGrid(imageURL) {
   image.style.background = `url(${imageURL})`;
   image.style.backgroundSize = "cover";
   image.style.backgroundPosition = "center";
+  addPriceFeatureToImage(image);
   productsGrid.appendChild(image);
 }
 
