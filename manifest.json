@@ -6,7 +6,7 @@
     "background_color" : "#ffffff",
     "display" : "standalone",
     "scope" : "./creador-de-catalogos/",
-    "start_url" : "./creador-de-catalogos/",
+    "start_url" : "./",
     "icons": [
         {
           "src": "icon.png",
