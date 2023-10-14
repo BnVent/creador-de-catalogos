@@ -12,10 +12,6 @@ const productsGrid = document.getElementById("products-grid");
 const addItemsCard = document.getElementById("add-item-card");
 const addItemsButton = document.getElementById("add-item-button");
 
-/* document.getElementById("add-items-button").onclick = () => {
-  openFiles.click();
-}; */
-
 addItemsButton.onclick = () => {
   openFiles.click();
 };
@@ -67,6 +63,8 @@ document.getElementById("download-button").onclick = () => {
 
   /* catalog.style.width = window.innerWidth * 1.5 + "px" */
 
+  productsGrid.removeChild(addItemsCard);
+
   htmlToImage
     .toPng(catalog)
     .then(function (dataUrl) {
@@ -75,6 +73,7 @@ document.getElementById("download-button").onclick = () => {
       createEl.download = new Date().getTime();
       createEl.click();
       createEl.remove();
+      productsGrid.appendChild(image);
       /* catalog.style.width = "100%"; */
     })
     .catch(function (error) {
