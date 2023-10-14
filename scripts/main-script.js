@@ -72,9 +72,6 @@ document.getElementById("download-catalog-button").onclick = () => {
     });
 };
 
-const productsElements = document.getElementById("products-grid").children;
-
-for (let i = 0; i < productsElements.length; i++) {
-  productsElements[i].onclick = () =>
-    (productsElements[i].style.transform = "scale(1.25)");
-}
+// Aviso en caso de que se ejecute desde PC, ordenador
+if (window.innerWidth >= 720)
+  alert("AVISO: Esta aplicación se encuentra en desarrollo. De momento está orientada para funcionar en dispositivos móviles.");
