@@ -6,13 +6,13 @@ let enabledFullscreen = false;
 const enterFullscreenHandler = () => {
   enabledFullscreen = true;
   catalogContainer.requestFullscreen();
-  fullscreenButton.src = "exit-fullscreen-icon.svg";
+  fullscreenButton.src = "/icons/exit-fullscreen-icon.svg";
 };
 
 const exitFullscreenHandler = () => {
   enabledFullscreen = false;
   document.exitFullscreen();
-  fullscreenButton.src = "enter-fullscreen-icon.svg";
+  fullscreenButton.src = "/icons/enter-fullscreen-icon.svg";
   return;
 };
 
