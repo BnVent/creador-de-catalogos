@@ -11,17 +11,18 @@ body {
   display: block;
   margin: auto;
   height: 100vh;
-  padding: 1rem 1.5rem 2rem 1.5rem;
+  padding: 1rem 1.5rem 4rem 1.5rem;
   max-width: 500px;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: max-content;
+  display: block;
   padding: 0.25rem 0.25rem;
-  margin-bottom: 1rem;
+  color: #FFF;
+  background-color: rgb(69, 137, 255);
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 3px 6px #a7a7a7;
 }
 header h1 {
   font-size: 1.5rem;
@@ -62,6 +63,7 @@ header img {
 #catalog-container {
   position: relative;
   border: 2px solid darkgray;
+  border-radius: 10px 10px 0 0;
   max-height: 55vh;
   margin: auto;
   box-sizing: border-box;
@@ -74,6 +76,20 @@ header img {
   height: max-content;
   width: 100%;
   background-color: #fff;
+}
+#catalog-container .price-element {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 0 0 8px 8px;
+  border: 2px solid #dbdbdb;
 }
 
 #pages-indicator-container {
@@ -95,7 +111,7 @@ header img {
 #add-banner-accordion {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   font-weight: bold;
   background-color: #fff;
 }
