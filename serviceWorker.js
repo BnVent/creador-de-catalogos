@@ -1,4 +1,4 @@
-const cacheName = "creador-de-catalogos"
+/* const cacheName = "creador-de-catalogos"
 const assets = [
   "/",
   "/index.html",
@@ -29,4 +29,4 @@ self.addEventListener("fetch", fetchEvent => {
       return res || fetch(fetchEvent.request)
     })
   )
-})
+}) */
