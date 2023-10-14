@@ -1,0 +1,17 @@
+{
+    "name" : "Creador de catálogos",
+    "short_name" : "Catálogos",
+    "description" : "Creador de catálogos sencillo",
+    "theme_color" : "#f69435",
+    "background_color" : "#ffffff",
+    "display" : "standalone",
+    "scope" : "./",
+    "start_url" : "./",
+    "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+    ]
+}
