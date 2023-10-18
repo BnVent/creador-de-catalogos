@@ -11,6 +11,7 @@ const openFiles = document.getElementById("open-files");
 const productsGrid = document.getElementById("products-grid");
 const addItemsCard = document.getElementById("add-item-card");
 const addItemsButton = document.getElementById("add-item-button");
+const catalog = document.getElementById("catalog");
 
 addItemsButton.onclick = () => {
   openFiles.click();
@@ -59,28 +60,33 @@ openFiles.onchange = (event) => {
 };
 
 document.getElementById("download-button").onclick = () => {
-  const catalog = document.getElementById("catalog");
-
   /* catalog.style.width = window.innerWidth * 1.5 + "px" */
 
   productsGrid.removeChild(addItemsCard);
+  catalog.style.display = "none";
 
-  htmlToImage
-    .toPng(catalog)
-    .then(function (dataUrl) {
-      const createEl = document.createElement("a");
-      createEl.href = dataUrl;
-      createEl.download = new Date().getTime();
-      createEl.click();
-      createEl.remove();
-      productsGrid.appendChild(image);
-      /* catalog.style.width = "100%"; */
-    })
-    .catch(function (error) {
-      console.error("oops, something went wrong!", error);
-    });
+  const saveCatalog = new Promise((resolve, reject) => {
+    document.getElementById("loading-screen").style.display = "block";
+    catalog.style.display = "block";
+    htmlToImage
+      .toPng(catalog)
+      .then(function (dataUrl) {
+        const createEl = document.createElement("a");
+        createEl.href = dataUrl;
+        createEl.download = new Date().getTime();
+        createEl.click();
+        createEl.remove();
+        productsGrid.appendChild(addItemsCard);
+        /* catalog.style.width = "100%"; */
+      })
+      .catch(function (error) {
+        console.error("oops, something went wrong!", error);
+        reject(error);
+      })
+      .finally(() => {
+        document.getElementById("loading-screen").style.display = "none";
+      });
+  });
+
+  saveCatalog();
 };
-
-// Aviso en caso de que se ejecute desde PC, ordenador
-if (window.innerWidth >= 720)
-  alert("AVISO: Esta aplicación se encuentra en desarrollo. De momento está orientada para funcionar en dispositivos móviles.");
