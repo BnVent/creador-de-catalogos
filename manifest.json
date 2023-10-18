@@ -2,7 +2,7 @@
     "name" : "Creador de catálogos",
     "short_name" : "Catálogos",
     "description" : "Creador de catálogos sencillo",
-    "theme_color" : "#f69435",
+    "theme_color" : "#4589ff",
     "background_color" : "#ffffff",
     "display" : "standalone",
     "scope" : "./creador-de-catalogos/",
