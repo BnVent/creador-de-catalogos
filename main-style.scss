@@ -3,17 +3,24 @@
   margin: 0;
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 body {
+  overscroll-behavior: none;
   font-family: sans-serif;
 }
 
 #app {
   display: block;
   margin: auto;
-  height: 100vh;
   padding: 1rem 1.5rem;
-  padding-bottom: 3rem;
   max-width: 500px;
+
+  @media screen and (min-width: 720px) {
+    margin-top: 2rem;
+  }
 }
 
 header {
@@ -24,6 +31,7 @@ header {
   margin: -1.5rem -1.5rem 1.5rem -1.5rem;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   box-shadow: 0 3px 6px #a7a7a7;
+  z-index: 32;
 
   h1 {
     font-size: 1.5rem;
@@ -33,12 +41,17 @@ header {
     width: 1.5rem;
     height: auto;
   }
+
+  @media screen and (min-width: 720px) {
+    border-radius: 10px;
+  }
 }
 
 #catalog-container {
   position: relative;
   border: 3px solid darkgray;
   border-radius: 10px;
+  height: 55vh;
   max-height: 55vh;
   box-sizing: border-box;
   overflow-y: scroll;
@@ -95,7 +108,6 @@ header {
   }
 
   #catalog {
-    min-height: 100vh;
     height: max-content;
     width: 100%;
     background-color: #fff;
@@ -294,16 +306,52 @@ header {
 #products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 25vh;
   gap: 1rem;
   padding: 1rem;
+
+  figure {
+    position: relative;
+  }
+
+  figcaption {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    outline: none;
+  }
+
+  img,
+  div {
+    aspect-ratio: 1;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: drop-shadow(0 3px 3px #dbdbdb);
+  }
 }
 
-#products-grid div {
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-  filter: drop-shadow(0 3px 3px #dbdbdb);
+#products-grid.minified {
+  gap: 3px;
+  img {
+    border: none;
+    border-radius: 0;
+    outline: 3px solid #dbdbdb;
+    filter: none;
+  }
+
+  #add-item-card {
+    border-radius: 0;
+    filter: none;
+  }
 }
 
 #show-more-options-container {

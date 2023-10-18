@@ -21,34 +21,42 @@ addItemsCard.onclick = () => {
   openFiles.click();
 };
 
-const addPriceFeatureToImage = (image) => {
-  const priceElement = document.createElement("input");
+const addPriceFeatureToImage = (figure) => {
+  const figCaption = figure.children[1];
 
-  image.onclick = () => {
-    if (image.children.length === 0) {
-      priceElement.setAttribute("type", "text");
-      priceElement.className = "price-element";
-      image.appendChild(priceElement);
-      priceElement.focus();
-    }
+  figure.onclick = () => {
+    figCaption.style.display = "block";
+    figCaption.focus();
   };
 
-  priceElement.onblur = () => {
-    if (priceElement.value == "") {
-      image.removeChild(priceElement);
+  figCaption.onblur = () => {
+    if (figCaption.innerText == "") {
+      figCaption.style.display = "none";
     }
   };
 };
 
 function addImageToGrid(imageURL) {
-  let image = document.createElement("div");
-  image.style.background = `url(${imageURL})`;
-  image.style.backgroundSize = "cover";
-  image.style.backgroundPosition = "center";
-  addPriceFeatureToImage(image);
+  catalog.style.display = "none";
+
+  let figure = document.createElement("figure");
+  let figCaption = document.createElement("figcaption");
+  let image = document.createElement("img");
+
+  figCaption.contentEditable = true;
+
+  figure.appendChild(image);
+  figure.appendChild(figCaption);
+
+  image.style.background = `#dbdbdb`;
+  image.src = imageURL;
+  image.loading = "lazy";
+
+  addPriceFeatureToImage(figure);
   productsGrid.removeChild(addItemsCard);
-  productsGrid.appendChild(image);
+  productsGrid.appendChild(figure);
   productsGrid.appendChild(addItemsCard);
+  catalog.style.display = "block";
 }
 
 openFiles.onchange = (event) => {
@@ -63,6 +71,7 @@ document.getElementById("download-button").onclick = () => {
   /* catalog.style.width = window.innerWidth * 1.5 + "px" */
 
   productsGrid.removeChild(addItemsCard);
+
   catalog.style.display = "none";
 
   const saveCatalog = new Promise((resolve, reject) => {
