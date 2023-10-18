@@ -40,13 +40,13 @@
         </div>
       </div> -->
 
-      <div id="add-banner-accordion">
-        <div class="header">
+      <div class="accordion-container" id="add-banner-accordion">
+        <div class="accordion-header">
           <span>Agregar logo de marca</span>
           <img class="button-icon" src="icons/arrow-down-icon.svg" alt="" />
         </div>
 
-        <div id="add-banner-body">
+        <div class="accordion-body" id="add-banner-body">
           <label for="">
             <span>Habilitar logo de marca</span>
             <input id="show-banner-checkbox" type="checkbox" />
@@ -60,6 +60,24 @@
           <!-- <label for="">
             <span>Generar encabezado</span>
           </label> -->
+        </div>
+      </div>
+
+      <div class="accordion-container" id="manage-grid-accordion">
+        <div class="accordion-header">
+          <span>Administrar cuadrícula</span>
+          <img class="button-icon" src="icons/arrow-down-icon.svg" alt="" />
+        </div>
+
+        <div class="accordion-body" id="manage-grid-body">
+          <label for="">
+            <span>Elementos por fila</span>
+            <div class="buttons-container">
+              <button class="active">2</button>
+              <button>3</button>
+              <button>4</button>
+            </div>
+          </label>
         </div>
       </div>
 
@@ -96,6 +114,7 @@
       </div> -->
     </div>
     <script src="scripts/main-script.js" type="module"></script>
+    <script src="scripts/manage-grid.js"></script>
     <script src="scripts/full-screen.js"></script>
     <script src="scripts/banner-options.js"></script>
     <script src="scripts/html-to-image.js"></script>

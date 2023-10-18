@@ -97,22 +97,37 @@ header {
   gap: 0.5rem;
 }
 
-#add-banner-accordion {
+.accordion-container {
   display: flex;
   flex-direction: column;
   font-weight: bold;
   background-color: #fff;
-  span {
-    color: rgb(88, 88, 255);
+  margin-bottom: 0.5rem;
+  border-radius: 32px;
+  border: 2px solid gray;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  user-select: none;
+  padding: 0.75rem 1.5rem;
+
+  img {
+    border-radius: 50%;
+    outline: 2px solid #000;
+    width: 1.75rem;
+    transition: transform 0.25s;
   }
 }
 
-#add-banner-body {
+.accordion-body {
   display: none;
   padding: 0.75rem 1.5rem;
   padding-top: 1.5rem;
   border-radius: 0 0 32px 32px;
-  border: 2px solid rgb(88, 88, 255);
   border-top: none;
 
   label {
@@ -140,21 +155,44 @@ header {
   }
 }
 
-#add-banner-accordion .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  user-select: none;
-  padding: 0.75rem 1.5rem;
+#add-banner-accordion {
   border: 2px solid rgb(88, 88, 255);
-  border-radius: 32px;
+  span {
+    color: rgb(88, 88, 255);
+  }
 
-  img {
-    border-radius: 50%;
-    outline: 2px solid #000;
-    width: 1.75rem;
-    transition: transform 0.25s;
+  .accordion-body {
+    border-top: 2px solid rgb(88, 88, 255);
+  }
+}
+
+#manage-grid-accordion {
+  .accordion-body {
+    border-top: 2px solid gray;
+
+    label {
+      display: block;
+    }
+
+    .buttons-container {
+      margin-top: 1rem;
+    }
+
+    button {
+      border: 2px solid gray;
+      width: 5rem;
+      padding: 0.5rem;
+      border-radius: 18px;
+      margin-right: 0.5rem;
+      transition: border-color 0.5s, background 0.5s;
+    }
+
+    button.active {
+      border-color: blue;
+      background-color: #fff;
+      color: blue;
+      font-weight: bold;
+    }
   }
 }
 
